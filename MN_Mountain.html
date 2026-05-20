@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>MN Mountain</title>
+<style>
+.app {display: flex;flex-direction: row;}
+.sidebar {display: block;min-width: 300px;width: auto;height: 100vh;}
+.slidebar {height: auto;}
+.MwM {display: inline-block;text-align: center;justify-content: center;width: 270px;min-height: 30px;}
+.SldBr_AaA {display: inline-block;text-align: center;width: 80px;height: 30px;}
+.InPuTer_ {display: inline-block;width: 45px;}
+.SlIdEr__ {display: inline-block;width: 130px;}
+.inputbar {width: auto;}
+.AaA {display: inline-block;text-align: center;width: 135px;height: 30px;}
+.InPuT {display: inline-block;width: 130px;}
+._MNBtn_Bttm_ {width: 28px;height: 25px;}
+._MNBtn_Bttm_GapFiller_ {width: 20px;}
+._MNBtn_Side_Bar_ {display: flex;flex-direction: column;flex-wrap: nowrap;align-items: center;}
+._MNBtn_Side_ {width: 75px;height: 25px;}
+._MNBtn_Side_ReSet_Col_ {width: 75px;height: 25px;}
+._MNBtn_Side_ReSet_Row_ {width: 75px;height: 25px;}
+</style>
+<body>
+</head>
+    <div class="app">
+        <div class="sidebar">
+            <div class="slidebar">
+                <a class="MwM"> <h2 style="display: inline-block;height:auto;width: auto;text-align: center;">  MN Mountain  </h2><br></a>
+                <br><a class="SldBr_AaA">    vArW </a>
+                <input type="text"  class="InPuTer_" oninput="main( true)" id="vAr_W" value="30">
+                <input type="range" class="SlIdEr__" oninput="main(false)" id="vArW_Value_slider" min="15" max="60" step="1" value="30">
+                <br><a class="SldBr_AaA">    vArH </a>
+                <input type="text"  class="InPuTer_" oninput="main( true)" id="vAr_H" value="18">
+                <input type="range" class="SlIdEr__" oninput="main(false)" id="vArH_Value_slider" min="15" max="36" step="1" value="18">
+                <br><a class="SldBr_AaA"> MNHLGap </a>
+                <input type="text"  class="InPuTer_" oninput="main( true)" id="MNHLGap_" value="3">
+                <input type="range" class="SlIdEr__" oninput="main(false)" id="MNHLGap_Value_slider" min="3" max="10" step="1" value="3">
+                <br><a class="SldBr_AaA">    BBoR </a>
+                <input type="text"  class="InPuTer_" oninput="main( true)" id="BBoR_" value="4">
+                <input type="range" class="SlIdEr__" oninput="main(false)" id="BBoR_Value_slider" min="4" max="50" step="1" value="4">
+                <br><a class="SldBr_AaA">     _B_ </a>
+                <input type="text"  class="InPuTer_" oninput="main( true)" id="_B__" value="19">
+                <input type="range" class="SlIdEr__" oninput="main(false)" id="_B__Value_slider" min="10" max="500" step="1" value="15">
+                <br><a class="SldBr_AaA">     BoW </a>
+                <input type="text"  class="InPuTer_" oninput="main( true)" id="BoW_" value="0">
+                <input type="range" class="SlIdEr__" oninput="main(false)" id="BoW_Value_slider" min="0" max="50" step="1" value="0">
+                <br><a class="SldBr_AaA">     BoL </a>
+                <input type="text"  class="InPuTer_" oninput="main( true)" id="BoL_" value="0">
+                <input type="range" class="SlIdEr__" oninput="main(false)" id="BoL_Value_slider" min="0" max="50" step="1" value="0">
+            </div>
+            <div class="inputbar">
+                <br><a class="AaA">      MNsplitter </a> <input type="text"  class="InPuT" oninput="main( true)" id="MN_splitter" value=",#000000|;#007777">
+                <br><a class="AaA">        vArColor </a> <input type="text"  class="InPuT" oninput="main( true)" id="vAr_color" value="#000000">
+                <br><a class="AaA">  selectvArColor </a> <input type="text"  class="InPuT" oninput="main( true)" id="select_vAr_Color" value="LUD#888888|lUD#880088|LuD#888800|luD#880000|LUd#008888|lUd#000088|Lud#008800">
+                <br><a class="AaA">       fontColor </a> <input type="text"  class="InPuT" oninput="main( true)" id="font_color" value="#000000">
+                <br><a class="AaA"> backgroundColor </a> <input type="text"  class="InPuT" oninput="main( true)" id="background_color" value="#FFFFFF">
+                <br><a class="AaA">     groundColor </a> <input type="text"  class="InPuT" oninput="main( true)" id="ground_color" value="#888888">
+                <br><a class="AaA"><button  style="width: 120px;height: auto;" onclick=" toFloorForm()"> floorForm </button></a>
+                    <a class="AaA"><button  style="width: 120px;height: auto;" onclick="  toCeilForm()">  ceilForm </button></a>
+                <br><a class="MwM"><!--button  style="width: 120px;height: auto;" onclick="         MwM()"> _-^ = w = ^-_ </button--></a>
+                <br><a class="MwM"><button  style="width: 150px;height: 50px;" onclick="downloadMNpic()">click to download</button></a>
+                <br>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column;flex-wrap: nowrap;justify-content: flex-start;align-items: center;height: auto;width: auto;">
+            <div style="display: flex;flex-direction: column;align-items: center;height: auto;width: auto;min-height:5vh"><h2 onclick="         MwM()"> ( _-^ = w = ^-_ ) </h2></div>
+            <div style="display: flex;flex-direction: row;height: auto;width: auto;">
+                <div style="height: auto;width: 5vw;"></div>
+                <div style="display: flex;flex-direction: column;align-items: center;height: auto;width: auto;">
+                    <div style="height: auto;width: 5vw;"></div>
+                    <textarea class="inputExp" oninput="main( true)" id="inputExp" rows="5" style="resize:both;width: 99%;height: 99%;" placeholder="请输入多行文本">()(;1)(;2,2)(;1)(|)()(;1)(;2,2)(,1)(,4;4)(,5;5,,5)(,4,,4)(,7,,7;7)(,8,,8;8,,,8)(,7,,7,,,7)(,10,,10,,,10;10)(,11,,11,,,11;11,,,,11)(|)()(;1)(;2,2)(;1)</textarea>
+                    <div style="display: flex;flex-direction: row;flex-wrap: nowrap;align-items: center;">
+                        <button class="_MNBtn_Side_ReSet_Col_" onclick="{HighLighted_1_Col=-1;fun();}">reset→</button>
+                        <div class="_MNBtn_Bttm_GapFiller_"></div>
+                        <div id="colButtons1" style="display: flex;flex-direction: row;flex-wrap: nowrap;align-items: center;width:auto;justify-content: space-between;"></div>
+                        <div class="_MNBtn_Bttm_GapFiller_"></div>
+                    </div>
+                    <div style="display: flex;flex-direction: row;width: auto; height: auto;">
+                        <div id="rowButtons" class="_MNBtn_Side_Bar_"></div>
+                        <div style="display: flex;flex-direction: column;width: 100%; height: auto;">
+                            <canvas id="myCanvas" width="50" height="50" style="display: block;">您的浏览器不支持 HTML5 canvas标签。</canvas>
+                        </div>
+                    </div>
+                    <div style="display: flex;flex-direction: row;flex-wrap: nowrap;align-items: center;">
+                        <button class="_MNBtn_Side_ReSet_Col_" onclick="{HighLighted_2_Col=0;fun();}">reset→</button>
+                        <div class="_MNBtn_Bttm_GapFiller_"></div>
+                        <div id="colButtons2" style="display: flex;flex-direction: row;flex-wrap: nowrap;align-items: center;width:auto;justify-content: space-between;"></div>
+                        <div class="_MNBtn_Bttm_GapFiller_"></div>
+                    </div>
+                </div>
+                <div style="height: auto;width:  5vw;"></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/getter_setter.js"></script>
+    <script src="js/MN.js"></script>
+    <script src="js/pageOp.js"></script>
+    <script src="js/Draw.js"></script>
+    <script>
+    </script>
+</body>
+</html>
