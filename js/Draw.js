@@ -2,7 +2,6 @@ let drwW = 0
 let drwH = 0
 let canvas = undefined
 let ctx = undefined
-
 function drawline2D(x1,y1,x2,y2,color){ctx.strokeStyle = color;ctx.beginPath();ctx.moveTo(x1,floor_or_ceil == 'ceil'?y1:drwH-y1);ctx.lineTo(x2,floor_or_ceil == 'ceil'?y2:drwH-y2);ctx.stroke()}
 function init_Canvas(){
     get_MN_DrawWH();
@@ -23,7 +22,6 @@ function get_MN_DrawWH(){
     }
     drwH+= BBoR;
 }
-
 function get_MN_vAr_Style(vArInfo,vAr_ind){
     if (vArInfo[0] == -1){return [1,vAr_color]};
     if (vArInfo[2] ==  0){return [0,vAr_color]};
@@ -33,7 +31,6 @@ function get_MN_vAr_Style(vArInfo,vAr_ind){
     retColor = select_vAr_color_map.get(flg)
     retColor = ((retColor == undefined)?vAr_color:'#'+retColor)
     return [vArInfo[1],retColor]}
-
 function get_MN_SpL_Style(RowInfo){
     if (RowInfo[0]  ==  -1){
         return [1,ground_color]
@@ -41,14 +38,12 @@ function get_MN_SpL_Style(RowInfo){
         return [RowInfo[1],MN_split_colors[RowInfo[0]]]
     }
 }
-
 function draw_MN_Ground(){
     for (let i  = -Math.ceil(_B_/5); i< (drwW+BoL*2)/5; i++)
         {drawline2D(i*5+BoW,0,i*5+_B_+BoW,_B_-1,ground_color)}
     ctx.font = ""+parseInt(_B_)+"px Arial";
     ctx.textAlign = "center";
     ctx.fillStyle = font_color;
-
     aft_which_MulMNspltr  = 0;
     aft_which_MulMNspltr_ = aft_which_MulMNspltr+1>= Multi_MN_spliter_inds.length?Multi_MN_spliter_inds.length-1:aft_which_MulMNspltr+1
     latest_MulMNspltr_i   = Multi_MN_spliter_inds[aft_which_MulMNspltr ]

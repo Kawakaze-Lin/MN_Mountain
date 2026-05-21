@@ -18,9 +18,9 @@
 ._MNBtn_Bttm_ {width: 28px;height: 25px;}
 ._MNBtn_Bttm_GapFiller_ {width: 20px;}
 ._MNBtn_Side_Bar_ {display: flex;flex-direction: column;flex-wrap: nowrap;align-items: center;}
-._MNBtn_Side_ {width: 75px;height: 25px;}
-._MNBtn_Side_ReSet_Col_ {width: 75px;height: 25px;}
-._MNBtn_Side_ReSet_Row_ {width: 75px;height: 25px;}
+._MNBtn_Side_ {min-width: 75px;height: 25px;}
+._MNBtn_Side_ReSet_Col_ {min-width: 75px;height: 25px;}
+._MNBtn_Side_ReSet_Row_ {min-width: 75px;height: 25px;}
 </style>
 <body>
 </head>
@@ -72,22 +72,22 @@
                     <div style="height: auto;width: 5vw;"></div>
                     <textarea class="inputExp" oninput="main( true)" id="inputExp" rows="5" style="resize:both;width: 99%;height: 99%;" placeholder="请输入多行文本">()(;1)(;2,2)(;1)(|)()(;1)(;2,2)(,1)(,4;4)(,5;5,,5)(,4,,4)(,7,,7;7)(,8,,8;8,,,8)(,7,,7,,,7)(,10,,10,,,10;10)(,11,,11,,,11;11,,,,11)(|)()(;1)(;2,2)(;1)</textarea>
                     <div style="display: flex;flex-direction: row;flex-wrap: nowrap;align-items: center;">
-                        <button class="_MNBtn_Side_ReSet_Col_" onclick="{HighLighted_1_Col=-1;main( true);}">reset→</button>
                         <div class="_MNBtn_Bttm_GapFiller_"></div>
                         <div id="colButtons1" style="display: flex;flex-direction: row;flex-wrap: nowrap;align-items: center;width:auto;justify-content: space-between;"></div>
                         <div class="_MNBtn_Bttm_GapFiller_"></div>
+                        <button class="_MNBtn_Side_ReSet_Col_" onclick="{HighLighted_1_Col=-1;main( true);}">←reset</button>
                     </div>
                     <div style="display: flex;flex-direction: row;width: auto; height: auto;">
-                        <div id="rowButtons" class="_MNBtn_Side_Bar_"></div>
                         <div style="display: flex;flex-direction: column;width: 100%; height: auto;">
                             <canvas id="myCanvas" width="50" height="50" style="display: block;">您的浏览器不支持 HTML5 canvas标签。</canvas>
                         </div>
+                        <div id="rowButtons" class="_MNBtn_Side_Bar_"></div>
                     </div>
                     <div style="display: flex;flex-direction: row;flex-wrap: nowrap;align-items: center;">
-                        <button class="_MNBtn_Side_ReSet_Col_" onclick="{HighLighted_2_Col=0;main( true);}">reset→</button>
                         <div class="_MNBtn_Bttm_GapFiller_"></div>
                         <div id="colButtons2" style="display: flex;flex-direction: row;flex-wrap: nowrap;align-items: center;width:auto;justify-content: space-between;"></div>
                         <div class="_MNBtn_Bttm_GapFiller_"></div>
+                        <button class="_MNBtn_Side_ReSet_Col_" onclick="{HighLighted_2_Col=0;main( true);}">←reset</button>
                     </div>
                 </div>
                 <div style="height: auto;width:  5vw;"></div>
@@ -99,7 +99,6 @@
     <script src="js/MN.js"></script>
     <script src="js/pageOp.js"></script>
     <script src="js/Draw.js"></script>
-    <script>
-    </script>
+    <script>window.addEventListener('load', function() { main( true); });</script>
 </body>
 </html>

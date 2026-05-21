@@ -1,16 +1,8 @@
 let MN_Exp_Str_input = ''
 let MN_split_chars = []
 let MN_split_colors = []
-function fillter_MN_Exp_Str_input(){
-    MNExpStrIpt_New = MN_Exp_Str_input.replace(' = ','(|)').replace('\n','(|)').replace('(|)(|)','(|)')
-    while(MNExpStrIpt_New!= MN_Exp_Str_input){
-        MN_Exp_Str_input = MNExpStrIpt_New;
-        MNExpStrIpt_New = MN_Exp_Str_input.replace(' = ','(|)').replace('\n','(|)').replace('(|)(|)','(|)')
-    }
-}
 function get_MN_input(){
     MN_Exp_Str_input = document.getElementById('inputExp').value
-    fillter_MN_Exp_Str_input()
     split_chars_info = document.getElementById('MN_splitter').value
     split_chars_list = split_chars_info.split('|')
     MN_split_chars = []
@@ -24,15 +16,12 @@ function get_MN_input(){
         MN_split_chars.push(Sp_i_Cr)
         MN_split_colors.push("#"+Sp_i_Cl)
     }
-
 }
-
 let background_color = ''
 let ground_color = ''
 let vAr_color = ''
 let font_color = ''
 let select_vAr_color = ''
-
 function get_Colors(){
     background_color = document.getElementById("background_color").value
     ground_color = document.getElementById("ground_color").value
@@ -41,7 +30,6 @@ function get_Colors(){
     select_vAr_color_map = new Map(select_vAr_color.split('|').map(x =>x.split('#')))
     font_color = document.getElementById("font_color").value
 }
-
 let vArW = 0
 let vArH = 0
 let MNHLGap = 3

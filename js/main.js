@@ -1,6 +1,5 @@
 function MwM(){alert(' ( = w = ) ')}
 function downloadMNpic(){ele = document.createElement('a');ele.href = canvas.toDataURL();ele.download = 'MN.png';ele.click();}
-window.addEventListener('load', function() { main( true); });
 function main(inputer_or_slideer){
     //get
     get_MN_input()
