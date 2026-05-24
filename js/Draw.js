@@ -2,7 +2,8 @@ let drwW = 0
 let drwH = 0
 let canvas = undefined
 let ctx = undefined
-function drawline2D(x1,y1,x2,y2,color){ctx.strokeStyle = color;ctx.beginPath();ctx.moveTo(x1,floor_or_ceil == 'ceil'?y1:drwH-y1);ctx.lineTo(x2,floor_or_ceil == 'ceil'?y2:drwH-y2);ctx.stroke()}
+
+function drawline2D(x1,y1,x2,y2,color,width=1){ctx.lineWidth = width;ctx.strokeStyle = color;ctx.beginPath();ctx.moveTo(x1,floor_or_ceil == 'ceil'?y1:drwH-y1);ctx.lineTo(x2,floor_or_ceil == 'ceil'?y2:drwH-y2);ctx.stroke()}
 function init_Canvas(){
     get_MN_DrawWH();
     canvas = document.getElementById("myCanvas")
@@ -88,8 +89,8 @@ function draw_MN_vArs(){
             SpLH = (row[1]-1)*MNHLGap;wi = row[2]-1;hi = row[3]//[SpC_i,count,fa_i,ind_in_total_row]
             if (get_MN_vAr_Style(row,i)[0]>0){
                 cur_vAr_color = get_MN_vAr_Style(row,i)[1];
-                drawline2D(vArW*0.5+vArW*i+BoW+BoL,MN_Space_List[hi][4]+SpLH+vArH,vArW*0.5+vArW*wi+BoW+BoL,MN_Space_List[hi][4]+SpLH,cur_vAr_color)
-                drawline2D(vArW*0.5+vArW*i+BoW+BoL,MN_Space_List[hi][4]+SpLH+vArH,vArW*0.5+vArW* i+BoW+BoL,MN_Space_List[hi][4]+SpLH,cur_vAr_color)
+                drawline2D(vArW*0.5+vArW*i+BoW+BoL,MN_Space_List[hi][4]+SpLH+vArH,vArW*0.5+vArW*wi+BoW+BoL,MN_Space_List[hi][4]+SpLH,cur_vAr_color,vArLW)
+                drawline2D(vArW*0.5+vArW*i+BoW+BoL,MN_Space_List[hi][4]+SpLH+vArH,vArW*0.5+vArW* i+BoW+BoL,MN_Space_List[hi][4]+SpLH,cur_vAr_color,vArLW)
             }
         }
     }

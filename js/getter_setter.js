@@ -30,6 +30,7 @@ function get_Colors(){
     select_vAr_color_map = new Map(select_vAr_color.split('|').map(x =>x.split('#')))
     font_color = document.getElementById("font_color").value
 }
+let vArLW = 1
 let vArW = 0
 let vArH = 0
 let MNHLGap = 3
@@ -38,16 +39,18 @@ let _B_ = 15
 let BoW = 0
 let BoL = 0
 function get_draw_args(inputer_or_slideer){
-    vArW    = inputer_or_slideer? parseInt(document.getElementById('vAr_W'   ).value):parseInt(document.getElementById('vArW_Value_slider'   ).value);
-    vArH    = inputer_or_slideer? parseInt(document.getElementById('vAr_H'   ).value):parseInt(document.getElementById('vArH_Value_slider'   ).value);
-    MNHLGap = inputer_or_slideer? parseInt(document.getElementById('MNHLGap_').value):parseInt(document.getElementById('MNHLGap_Value_slider').value);
-    BBoR    = inputer_or_slideer? parseInt(document.getElementById('BBoR_'   ).value):parseInt(document.getElementById('BBoR_Value_slider'   ).value);
-    _B_     = inputer_or_slideer? parseInt(document.getElementById('_B__'    ).value):parseInt(document.getElementById('_B__Value_slider'    ).value);
-    BoW     = inputer_or_slideer? parseInt(document.getElementById('BoW_'    ).value):parseInt(document.getElementById('BoW_Value_slider'    ).value);
-    BoL     = inputer_or_slideer? parseInt(document.getElementById('BoL_'    ).value):parseInt(document.getElementById('BoL_Value_slider'    ).value);
+    vArLW   = parseInt(document.getElementById( inputer_or_slideer? 'vArLW'   :'vArLW_Value_slider'  ).value);
+    vArW    = parseInt(document.getElementById( inputer_or_slideer? 'vAr_W'   :'vArW_Value_slider'   ).value);
+    vArH    = parseInt(document.getElementById( inputer_or_slideer? 'vAr_H'   :'vArH_Value_slider'   ).value);
+    MNHLGap = parseInt(document.getElementById( inputer_or_slideer? 'MNHLGap_':'MNHLGap_Value_slider').value);
+    BBoR    = parseInt(document.getElementById( inputer_or_slideer? 'BBoR_'   :'BBoR_Value_slider'   ).value);
+    _B_     = parseInt(document.getElementById( inputer_or_slideer? '_B__'    :'_B__Value_slider'    ).value);
+    BoW     = parseInt(document.getElementById( inputer_or_slideer? 'BoW_'    :'BoW_Value_slider'    ).value);
+    BoL     = parseInt(document.getElementById( inputer_or_slideer? 'BoL_'    :'BoL_Value_slider'    ).value);
     lim_draw_args(inputer_or_slideer)
 }
 function lim_draw_args(inputer_or_slideer){
+    vArLW = vArLW<1?1:(vArLW>10?10:vArLW)
     vArW = vArW<15?15:vArW
     if(inputer_or_slideer)document.getElementById('vArW_Value_slider').max   = ''+(vArW*2)
     vArH = vArH<15?15:vArH
@@ -67,6 +70,7 @@ function lim_draw_args(inputer_or_slideer){
     BoL = BoL<0?0:(BoL>50?50:BoL)
 }
 function set_draw_args(inputer_or_slideer){
+    document.getElementById(inputer_or_slideer?'vArLW'   :'vArLW_Value_slider'  ).value = ''+vArLW   ;
     document.getElementById(inputer_or_slideer?'vAr_W'   :'vArW_Value_slider'   ).value = ''+vArW    ;
     document.getElementById(inputer_or_slideer?'vAr_H'   :'vArH_Value_slider'   ).value = ''+vArH    ;
     document.getElementById(inputer_or_slideer?'MNHLGap_':'MNHLGap_Value_slider').value = ''+MNHLGap ;
