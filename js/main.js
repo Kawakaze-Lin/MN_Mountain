@@ -1,5 +1,4 @@
 function MwM(){alert(' ( = w = ) ')}
-function downloadMNpic(){ele = document.createElement('a');ele.href = canvas.toDataURL();ele.download = 'MN.png';ele.click();}
 function main(inputer_or_slideer){
     //get
     get_MN_input()
@@ -12,6 +11,6 @@ function main(inputer_or_slideer){
     setupButtons()
     setCSS()
     //draw
-    init_Canvas()
+    init_svg()
     draw()
 }

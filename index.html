@@ -63,7 +63,8 @@
                 <br><a class="AaA"><button  style="width: 120px;height: auto;" onclick=" toFloorForm()"> floorForm </button></a>
                     <a class="AaA"><button  style="width: 120px;height: auto;" onclick="  toCeilForm()">  ceilForm </button></a>
                 <br><a class="MwM"><!--button  style="width: 120px;height: auto;" onclick="         MwM()"> _-^ = w = ^-_ </button--></a>
-                <br><a class="MwM"><button  style="width: 150px;height: 50px;" onclick="downloadMNpic()">click to download</button></a>
+                <br><a class="MwM" id="btnDownloadSvg_a"><button id="btnDownloadSvg" style="width: 150px;height: 50px;" onclick="downloadMNsvg()">save as SVG</button></a>
+                <br><a class="MwM" id="btnDownloadPng_a"><button id="btnDownloadPng" style="width: 150px;height: 50px;" onclick="downloadMNpic()">save as PNG</button></a>
                 <br>
             </div>
         </div>
@@ -78,11 +79,13 @@
                         <div class="_MNBtn_Bttm_GapFiller_"></div>
                         <div id="colButtons1" style="display: flex;flex-direction: row;flex-wrap: nowrap;align-items: center;width:auto;justify-content: space-between;"></div>
                         <div class="_MNBtn_Bttm_GapFiller_"></div>
-                        <button class="_MNBtn_Side_ReSet_Col_" onclick="{HighLighted_1_Col=-1;main( true);}">←reset</button>
+                        <button class="_MNBtn_Side_ReSet_Col_" onclick="{reset_HighLighted_Col_Row(1);init_svg();draw();}">←reset</button>
                     </div>
                     <div style="display: flex;flex-direction: row;width: auto; height: auto;">
                         <div style="display: flex;flex-direction: column;width: 100%; height: auto;">
-                            <canvas id="myCanvas" width="50" height="50" style="display: block;">您的浏览器不支持 HTML5 canvas标签。</canvas>
+                            <!-- <svg id="mysvg" width="50" height="50" style="display: block;">您的浏览器不支持 HTML5 svg标签。</svg> -->
+                            <svg id="mysvg" width="50" height="50" style="display: block;">您的浏览器不支持 svg 标签。</svg>
+                            <img id="mysvgImg" width="50" height="50" style="display: none;"></img>
                         </div>
                         <div id="rowButtons" class="_MNBtn_Side_Bar_"></div>
                     </div>
@@ -90,7 +93,7 @@
                         <div class="_MNBtn_Bttm_GapFiller_"></div>
                         <div id="colButtons2" style="display: flex;flex-direction: row;flex-wrap: nowrap;align-items: center;width:auto;justify-content: space-between;"></div>
                         <div class="_MNBtn_Bttm_GapFiller_"></div>
-                        <button class="_MNBtn_Side_ReSet_Col_" onclick="{HighLighted_2_Col=0;main( true);}">←reset</button>
+                        <button class="_MNBtn_Side_ReSet_Col_" onclick="{reset_HighLighted_Col_Row(2);init_svg();draw();}">←reset</button>
                     </div>
                 </div>
                 <div style="height: auto;width:  5vw;"></div>

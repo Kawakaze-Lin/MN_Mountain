@@ -1,16 +1,32 @@
-let HighLighted_1_Col = -1
-let HighLighted_2_Col = 0
-let HighLighted_Row = 0
+let HighLighted__Row__list = []//0
+let HighLighted_1_Col_list = []//1
+let HighLighted_2_Col_list = []//2
 let max_Tag_Len0=0
 let max_Tag_Len1=0
-
+function init_HighLighted_Col_Row(colLen,rowLen){
+    HighLighted__Row__list = new Array(rowLen).fill(false)//0
+    HighLighted_1_Col_list = new Array(colLen).fill(false)//1
+    HighLighted_2_Col_list = new Array(colLen).fill(false)//2
+}
+function set_HighLighted_Col_Row(data_tomerge){
+    //data_tomerge = (mode,ind)
+    if(data_tomerge[0]==0){HighLighted__Row__list[data_tomerge[1]] = HighLighted__Row__list[data_tomerge[1]]==true?false:true}
+    if(data_tomerge[0]==1){HighLighted_1_Col_list[data_tomerge[1]] = HighLighted_1_Col_list[data_tomerge[1]]==true?false:true}
+    if(data_tomerge[0]==2){HighLighted_2_Col_list[data_tomerge[1]] = HighLighted_2_Col_list[data_tomerge[1]]==true?false:true}
+}
+function reset_HighLighted_Col_Row(mode){
+    if(mode==0){HighLighted__Row__list = new Array(HighLighted__Row__list.length).fill(false)}
+    if(mode==1){HighLighted_1_Col_list = new Array(HighLighted_1_Col_list.length).fill(false)}
+    if(mode==2){HighLighted_2_Col_list = new Array(HighLighted_2_Col_list.length).fill(false)}
+}
 function setupButtons(){
+    init_HighLighted_Col_Row(MN_Col_info_List.length,MN_Space_List.length)
     colButtons1 = ''
     colButtons2 = ''
-    rowButton = '<button class = "_MNBtn_Side_ReSet_Row_" onclick = "{HighLighted_Row =  0;main( true);}">'+(_B_>18?('reset '+(floor_or_ceil == 'floor'?'↑':'↓')):'')+'</button>\n'
+    rowButton = '<button class = "_MNBtn_Side_ReSet_Row_" onclick = "{reset_HighLighted_Col_Row(0);init_svg();draw();}">'+(_B_>18?('reset '+(floor_or_ceil == 'floor'?'↑':'↓')):'')+'</button>\n'
     for (let i in MN_Col_info_List){
-        colButtons1+= '<button class = "_MNBtn_Bttm_" onclick = "{HighLighted_1_Col =  '+i+';main( true);}"></button>\n'
-        colButtons2+= '<button class = "_MNBtn_Bttm_" onclick = "{HighLighted_2_Col =  '+i+';main( true);}"></button>\n'
+        colButtons1+= '<button class = "_MNBtn_Bttm_" onclick = "{set_HighLighted_Col_Row([1, '+i+']);init_svg();draw();}"></button>\n'
+        colButtons2+= '<button class = "_MNBtn_Bttm_" onclick = "{set_HighLighted_Col_Row([2, '+i+']);init_svg();draw();}"></button>\n'
     }
     max_Tag_Len0=0
     max_Tag_Len1=0
@@ -21,7 +37,7 @@ function setupButtons(){
           (() =>{tmpsp = '';for(let j in row[3]){ spspsp = row[3][j];  tmpsp+= MN_split_chars[spspsp[0]].repeat(spspsp[1])+'_'; tmp0+=spspsp[1];tmp1+=1;} return tmpsp;})();
         max_Tag_Len0=tmp0>max_Tag_Len0?tmp0:max_Tag_Len0;
         max_Tag_Len1=tmp1>max_Tag_Len1?tmp1:max_Tag_Len1;
-        rowButton+= '<button class = "_MNBtn_Side_"'+'style = "height: '+_h_+'px;"'+' onclick = "{HighLighted_Row =  '+i+';main( true);}">'+sROWs+'</button>\n'
+        rowButton+= '<button class = "_MNBtn_Side_"'+'style = "height: '+_h_+'px;"'+' onclick = "{set_HighLighted_Col_Row([0, '+i+']);init_svg();draw();}">'+sROWs+'</button>\n'
     }
     document.getElementById('rowButtons' ).innerHTML = rowButton
     document.getElementById('colButtons1').innerHTML = colButtons1
