@@ -20,24 +20,23 @@ function reset_HighLighted_Col_Row(mode){
     if(mode==2){HighLighted_2_Col_list = new Array(HighLighted_2_Col_list.length).fill(false)}
 }
 function setupButtons(){
-    init_HighLighted_Col_Row(MN_Col_info_List.length,MN_Space_List.length)
     colButtons1 = ''
     colButtons2 = ''
-    rowButton = '<button class = "_MNBtn_Side_ReSet_Row_" onclick = "{reset_HighLighted_Col_Row(0);init_svg();draw();}">'+(_B_>18?('reset '+(floor_or_ceil == 'floor'?'↑':'↓')):'')+'</button>\n'
+    rowButton = '<button class = "_MNBtn_Side_ReSet_Row_" onclick = "{reset_HighLighted_Col_Row(0);setCSS();draw();}">'+(_B_>18?'reset ':'')+'</button>\n'
     for (let i in MN_Col_info_List){
-        colButtons1+= '<button class = "_MNBtn_Bttm_" onclick = "{set_HighLighted_Col_Row([1, '+i+']);init_svg();draw();}"></button>\n'
-        colButtons2+= '<button class = "_MNBtn_Bttm_" onclick = "{set_HighLighted_Col_Row([2, '+i+']);init_svg();draw();}"></button>\n'
+        colButtons1+= '<button class = "_MNBtn_Bttm_" onclick = "{set_HighLighted_Col_Row([1, '+i+']);setCSS();draw();}"></button>\n'
+        colButtons2+= '<button class = "_MNBtn_Bttm_" onclick = "{set_HighLighted_Col_Row([2, '+i+']);setCSS();draw();}"></button>\n'
     }
     max_Tag_Len0=0
     max_Tag_Len1=0
     for(let i in MN_Space_List){row = MN_Space_List[i];
-        _h_ = BBoR+MNHLGap*(row[1]-1>0?row[1]-1:0)+((row[0]<0||row[2] == 0)?0:vArH);
-        tmp0=0;tmp1=0
-        sROWs = row[2] == 0?'':
-          (() =>{tmpsp = '';for(let j in row[3]){ spspsp = row[3][j];  tmpsp+= MN_split_chars[spspsp[0]].repeat(spspsp[1])+'_'; tmp0+=spspsp[1];tmp1+=1;} return tmpsp;})();
+        _h_ = BBoR+MNHLGap*(row[1]-1>0?row[1]-1:0)+((row[0]<0)?0:vArH);
+        tmp0=0;tmp1=0;
+        sROWs = (() =>{tmpsp = '';for(let j in row[2]){ spspsp = row[2][j];if(spspsp[0]<0){continue};  
+                                    tmpsp+= MN_split_chars[spspsp[0]].repeat(spspsp[1])+'_'; tmp0+=spspsp[1];tmp1+=1;} return tmpsp;})();
         max_Tag_Len0=tmp0>max_Tag_Len0?tmp0:max_Tag_Len0;
         max_Tag_Len1=tmp1>max_Tag_Len1?tmp1:max_Tag_Len1;
-        rowButton+= '<button class = "_MNBtn_Side_"'+'style = "height: '+_h_+'px;"'+' onclick = "{set_HighLighted_Col_Row([0, '+i+']);init_svg();draw();}">'+sROWs+'</button>\n'
+        rowButton+= '<button class = "_MNBtn_Side_"'+'style = "height: '+_h_+'px;"'+' onclick = "{set_HighLighted_Col_Row([0, '+i+']);setCSS();draw();}">'+sROWs+'</button>\n'
     }
     document.getElementById('rowButtons' ).innerHTML = rowButton
     document.getElementById('colButtons1').innerHTML = colButtons1

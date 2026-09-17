@@ -28,43 +28,44 @@
         <div class="sidebar">
             <div class="slidebar">
                 <a class="MwM"> <h2 style="display: inline-block;height:auto;width: auto;text-align: center;">  MN Mountain  </h2><br></a>
-                <br><a class="SldBr_AaA"> ArLineW </a>
-                <input type="text"  class="InPuTer_" oninput="main( true)" id="vArLW" value="1">
-                <input type="range" class="SlIdEr__" oninput="main(false)" id="vArLW_Value_slider" min="1" max="10" step="1" value="1">
-                <br><a class="SldBr_AaA">    vArW </a>
-                <input type="text"  class="InPuTer_" oninput="main( true)" id="vAr_W" value="30">
-                <input type="range" class="SlIdEr__" oninput="main(false)" id="vArW_Value_slider" min="15" max="60" step="1" value="30">
-                <br><a class="SldBr_AaA">    vArH </a>
-                <input type="text"  class="InPuTer_" oninput="main( true)" id="vAr_H" value="18">
-                <input type="range" class="SlIdEr__" oninput="main(false)" id="vArH_Value_slider" min="15" max="36" step="1" value="18">
-                <br><a class="SldBr_AaA"> MNHLGap </a>
-                <input type="text"  class="InPuTer_" oninput="main( true)" id="MNHLGap_" value="3">
-                <input type="range" class="SlIdEr__" oninput="main(false)" id="MNHLGap_Value_slider" min="3" max="10" step="1" value="3">
-                <br><a class="SldBr_AaA">    BBoR </a>
-                <input type="text"  class="InPuTer_" oninput="main( true)" id="BBoR_" value="4">
-                <input type="range" class="SlIdEr__" oninput="main(false)" id="BBoR_Value_slider" min="4" max="50" step="1" value="4">
-                <br><a class="SldBr_AaA">     _B_ </a>
-                <input type="text"  class="InPuTer_" oninput="main( true)" id="_B__" value="19">
-                <input type="range" class="SlIdEr__" oninput="main(false)" id="_B__Value_slider" min="10" max="500" step="1" value="15">
-                <br><a class="SldBr_AaA">     BoW </a>
-                <input type="text"  class="InPuTer_" oninput="main( true)" id="BoW_" value="0">
-                <input type="range" class="SlIdEr__" oninput="main(false)" id="BoW_Value_slider" min="0" max="50" step="1" value="0">
-                <br><a class="SldBr_AaA">     BoL </a>
-                <input type="text"  class="InPuTer_" oninput="main( true)" id="BoL_" value="0">
-                <input type="range" class="SlIdEr__" oninput="main(false)" id="BoL_Value_slider" min="0" max="50" step="1" value="0">
+                <br><a class="SldBr_AaA"> vArLineW </a>
+                <input type="text"  class="InPuTer_" oninput="get_draw_args( true);set_draw_args(false);setupButtons();setCSS();draw();" id="vArLW" value="1">
+                <input type="range" class="SlIdEr__" oninput="get_draw_args(false);set_draw_args( true);setupButtons();setCSS();draw();" id="vArLW_Value_slider" min="1" max="5" step="1" value="1">
+                <br><a class="SldBr_AaA">     vArW </a>
+                <input type="text"  class="InPuTer_" oninput="get_draw_args( true);set_draw_args(false);setupButtons();setCSS();draw();" id="vAr_W" value="30">
+                <input type="range" class="SlIdEr__" oninput="get_draw_args(false);set_draw_args( true);setupButtons();setCSS();draw();" id="vArW_Value_slider" min="15" max="60" step="1" value="30">
+                <br><a class="SldBr_AaA">     vArH </a>
+                <input type="text"  class="InPuTer_" oninput="get_draw_args( true);set_draw_args(false);setupButtons();setCSS();draw();" id="vAr_H" value="18">
+                <input type="range" class="SlIdEr__" oninput="get_draw_args(false);set_draw_args( true);setupButtons();setCSS();draw();" id="vArH_Value_slider" min="15" max="36" step="1" value="18">
+                <br><a class="SldBr_AaA">  MNHLGap </a>
+                <input type="text"  class="InPuTer_" oninput="get_draw_args( true);set_draw_args(false);setupButtons();setCSS();draw();" id="MNHLGap_" value="3">
+                <input type="range" class="SlIdEr__" oninput="get_draw_args(false);set_draw_args( true);setupButtons();setCSS();draw();" id="MNHLGap_Value_slider" min="3" max="10" step="1" value="3">
+                <br><a class="SldBr_AaA">     BBoR </a>
+                <input type="text"  class="InPuTer_" oninput="get_draw_args( true);set_draw_args(false);setupButtons();setCSS();draw();" id="BBoR_" value="4">
+                <input type="range" class="SlIdEr__" oninput="get_draw_args(false);set_draw_args( true);setupButtons();setCSS();draw();" id="BBoR_Value_slider" min="4" max="50" step="1" value="4">
+                <br><a class="SldBr_AaA">      _B_ </a>
+                <input type="text"  class="InPuTer_" oninput="get_draw_args( true);set_draw_args(false);setupButtons();setCSS();draw();" id="_B__" value="19">
+                <input type="range" class="SlIdEr__" oninput="get_draw_args(false);set_draw_args( true);setupButtons();setCSS();draw();" id="_B__Value_slider" min="10" max="500" step="1" value="15">
+                <br><a class="SldBr_AaA">      BoW </a>
+                <input type="text"  class="InPuTer_" oninput="get_draw_args( true);set_draw_args(false);setupButtons();setCSS();draw();" id="BoW_" value="0">
+                <input type="range" class="SlIdEr__" oninput="get_draw_args(false);set_draw_args( true);setupButtons();setCSS();draw();" id="BoW_Value_slider" min="0" max="50" step="1" value="0">
+                <br><a class="SldBr_AaA">      BoL </a>
+                <input type="text"  class="InPuTer_" oninput="get_draw_args( true);set_draw_args(false);setupButtons();setCSS();draw();" id="BoL_" value="0">
+                <input type="range" class="SlIdEr__" oninput="get_draw_args(false);set_draw_args( true);setupButtons();setCSS();draw();" id="BoL_Value_slider" min="0" max="50" step="1" value="0">
             </div>
             <div class="inputbar">
-                <br><a class="AaA">      MNsplitter </a> <input type="text"  class="InPuT" oninput="main( true)" id="MN_splitter" value=",#000000|;#007777">
-                <br><a class="AaA">        vArColor </a> <input type="text"  class="InPuT" oninput="main( true)" id="vAr_color" value="#000000">
-                <br><a class="AaA">  selectvArColor </a> <input type="text"  class="InPuT" oninput="main( true)" id="select_vAr_Color" value="LUD#AAAAAA|lUD#AA00AA|LuD#AAAA00|luD#AA0000|LUd#00AAAA|lUd#0000AA|Lud#00AA00">
-                <br><a class="AaA">       fontColor </a> <input type="text"  class="InPuT" oninput="main( true)" id="font_color" value="#000000">
-                <br><a class="AaA"> backgroundColor </a> <input type="text"  class="InPuT" oninput="main( true)" id="background_color" value="#FFFFFF">
-                <br><a class="AaA">     groundColor </a> <input type="text"  class="InPuT" oninput="main( true)" id="ground_color" value="#888888">
+                <br><a class="AaA">      MNsplitter </a> <input type="text"  class="InPuT" oninput="get_Colors();draw();" id="MN_splitter" value=",#000000|;#007777">
+                <br><a class="AaA">        vArColor </a> <input type="text"  class="InPuT" oninput="get_Colors();draw();" id="vAr_color" value="#000000">
+                <br><a class="AaA">  selectvArColor </a> <input type="text"  class="InPuT" oninput="get_Colors();draw();" id="select_vAr_Color" value="LUD#AAAAAA|lUD#AA00AA|LuD#AAAA00|luD#AA0000|LUd#00AAAA|lUd#0000AA|Lud#00AA00">
+                <br><a class="AaA">       fontColor </a> <input type="text"  class="InPuT" oninput="get_Colors();draw();" id="font_color" value="#000000">
+                <br><a class="AaA"> backgroundColor </a> <input type="text"  class="InPuT" oninput="get_Colors();draw();" id="background_color" value="#FFFFFF">
+                <br><a class="AaA">     groundColor </a> <input type="text"  class="InPuT" oninput="get_Colors();draw();" id="ground_color" value="#888888">
                 <br><a class="AaA"><button  style="width: 120px;height: auto;" onclick=" toFloorForm()"> floorForm </button></a>
                     <a class="AaA"><button  style="width: 120px;height: auto;" onclick="  toCeilForm()">  ceilForm </button></a>
                 <br><a class="MwM"><!--button  style="width: 120px;height: auto;" onclick="         MwM()"> _-^ = w = ^-_ </button--></a>
                 <br><a class="MwM" id="btnDownloadSvg_a"><button id="btnDownloadSvg" style="width: 150px;height: 50px;" onclick="downloadMNsvg()">save as SVG</button></a>
                 <br><a class="MwM" id="btnDownloadPng_a"><button id="btnDownloadPng" style="width: 150px;height: 50px;" onclick="downloadMNpic()">save as PNG</button></a>
+                <br><a class="MwM" ></a>
                 <br>
             </div>
         </div>
@@ -74,12 +75,13 @@
                 <div style="height: auto;width: 5vw;"></div>
                 <div style="display: flex;flex-direction: column;align-items: center;height: auto;width: auto;">
                     <div style="height: auto;width: 5vw;"></div>
-                    <textarea class="inputExp" oninput="main( true)" id="inputExp" rows="5" style="resize:both;width: 99%;height: 99%;" placeholder="请输入多行文本">()(;1)(;2,2)(;1)(|)()(;1)(;2,2)(,1)(,4;4)(,5;5,,5)(,4,,4)(,7,,7;7)(,8,,8;8,,,8)(,7,,7,,,7)(,10,,10,,,10;10)(,11,,11,,,11;11,,,,11)(|)()(;1)(;2,2)(;1)</textarea>
+                    <!-- ()(;1)(;2,2)(;1)(|)()(;1)(;2,2)(,1)(,4;4)(,5;5,,5)(,4,,4)(,7,,7;7)(,8,,8;8,,,8)(,7,,7,,,7)(,10,,10,,,10;10)(,11,,11,,,11;11,,,,11)(|)()(;1)(;2,2)(;1) -->
+                    <textarea class="inputExp" oninput="get_MN_input();parse_MN();setupButtons();setCSS();draw();" id="inputExp" rows="5" style="resize:both;width: 99%;height: 99%;" placeholder="请输入多行文本">()(;*1,1;1)(;2,2,,2)(;1)</textarea>
                     <div style="display: flex;flex-direction: row;flex-wrap: nowrap;align-items: center;">
                         <div class="_MNBtn_Bttm_GapFiller_"></div>
                         <div id="colButtons1" style="display: flex;flex-direction: row;flex-wrap: nowrap;align-items: center;width:auto;justify-content: space-between;"></div>
                         <div class="_MNBtn_Bttm_GapFiller_"></div>
-                        <button class="_MNBtn_Side_ReSet_Col_" onclick="{reset_HighLighted_Col_Row(1);init_svg();draw();}">←reset</button>
+                        <button class="_MNBtn_Side_ReSet_Col_" onclick="{reset_HighLighted_Col_Row(1);setCSS();draw();}">reset</button>
                     </div>
                     <div style="display: flex;flex-direction: row;width: auto; height: auto;">
                         <div style="display: flex;flex-direction: column;width: 100%; height: auto;">
@@ -93,18 +95,18 @@
                         <div class="_MNBtn_Bttm_GapFiller_"></div>
                         <div id="colButtons2" style="display: flex;flex-direction: row;flex-wrap: nowrap;align-items: center;width:auto;justify-content: space-between;"></div>
                         <div class="_MNBtn_Bttm_GapFiller_"></div>
-                        <button class="_MNBtn_Side_ReSet_Col_" onclick="{reset_HighLighted_Col_Row(2);init_svg();draw();}">←reset</button>
+                        <button class="_MNBtn_Side_ReSet_Col_" onclick="{reset_HighLighted_Col_Row(2);setCSS();draw();}">reset</button>
                     </div>
                 </div>
                 <div style="height: auto;width:  5vw;"></div>
             </div>
         </div>
     </div>
-    <script src="js/main.js"></script>
     <script src="js/getter_setter.js"></script>
     <script src="js/MN.js"></script>
     <script src="js/pageOp.js"></script>
     <script src="js/Draw.js"></script>
-    <script>window.addEventListener('load', function() { main( true); });</script>
+    <script>function MwM(){alert(' ( = w = ) ')};
+    window.addEventListener('load', function() {get_draw_args( true);set_draw_args(false);get_Colors();get_MN_input();parse_MN();setupButtons();setCSS();draw();});</script>
 </body>
 </html>

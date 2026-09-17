@@ -50,7 +50,7 @@ function get_draw_args(inputer_or_slideer){
     lim_draw_args(inputer_or_slideer)
 }
 function lim_draw_args(inputer_or_slideer){
-    vArLW = vArLW<1?1:(vArLW>10?10:vArLW)
+    vArLW = vArLW<1?1:(vArLW>5?5:vArLW)
     vArW = vArW<15?15:vArW
     if(inputer_or_slideer)document.getElementById('vArW_Value_slider').max   = ''+(vArW*2)
     vArH = vArH<15?15:vArH
